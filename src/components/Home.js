@@ -27,13 +27,13 @@ function Home() {
 
 
   return (
-    <div className='content'>
+    <div className='content' style={{marginLeft: '68px'}}>
       <>
         <h1 className='font-page'>Home</h1>
-        <Grid container marginLeft='0px' rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {APIData.map((staff) => (
 
-            <Card sx={{ maxWidth: 345 }}>
+            <Card style={{padding: '30px'}} sx={{ maxWidth: 400}}>
               <CardMedia
                 component="img"
                 height="260"
@@ -58,7 +58,9 @@ function Home() {
                 </CardContent>
               </div>
               <CardActions>
+                <Link to={`detail/${staff.id}`}>
                 <Button size="small">Detail</Button>
+                </Link>
               </CardActions>
             </Card>
           ))};
