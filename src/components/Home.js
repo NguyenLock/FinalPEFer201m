@@ -57,7 +57,7 @@ function Home() {
 
                 </CardContent>
               </div>
-              <CardActions>
+              <CardActions style={{display: 'contents'}}>
                 <Link to={`detail/${staff.id}`}>
                 <Button size="small">Detail</Button>
                 </Link>
