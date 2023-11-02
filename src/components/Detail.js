@@ -1,6 +1,6 @@
-import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 
@@ -37,21 +37,27 @@ export default function Detail() {
             />
             <CardContent>
               <Typography gutterBottom variant='h5' component="div">
-                <a href={`detail/${APIData.id}`}>{APIData.name}</a>
+               Name: {APIData.name}
               </Typography>
               <Typography gutterBottom variant='h5' component='div'>
-                {APIData.address}
+               Address {APIData.address}
               </Typography>
               <Typography gutterBottom variant='h5' component='div'>
-                {APIData.age}
+                Age: {APIData.age}
               </Typography>
               <Typography gutterBottom variant='h5' component='div'>
-                {APIData.createAt}
+                CreateAt {APIData.createAt}
               </Typography>
+              <CardActions>
+                <Link to={"/"}>
+                  <Button size='small'>Home</Button>
+                </Link>
+              </CardActions>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
     </div>
+    
   )
 }

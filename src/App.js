@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import DashBoard from "./components/DashBoard";
 import Detail from "./components/Detail";
+import AddStaff from "./components/AddStaff";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path ="/detail/:id" element={<Detail />}></Route>
+        <Route  path='/addNewStaff' element={<AddStaff/> }></Route>
         <Route path="/dashboard" element={<DashBoard />}></Route>
       </Routes>
     </div>

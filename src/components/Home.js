@@ -42,17 +42,17 @@ function Home() {
               <div className='card-content'>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    <Link to={`detail/${staff.id}`}>
-                      <a>{staff.name}</a>
+                    <Link style={{textDecoration: 'none', color: 'red'}} to={`detail/${staff.id}`}>
+                      Name: <a> {staff.name}</a>
                     </Link>
                   </Typography>
 
                   <Typography gutterBottom variant="h5" component="div">
-                    {staff.address}
+                    Address {staff.address}
                   </Typography>
 
                   <Typography gutterBottom variant="h5" component="div">
-                    {staff.age}
+                    Age: {staff.age}
                   </Typography>
 
                 </CardContent>
