@@ -37,7 +37,7 @@ export default function UpdateStaff() {
     const handleClose = () => {
         setOpen(false);
     };
-    const putStaffUrl = `https://65375e4bbb226bb85dd320ac.mockapi.io/declareASchema`
+    const putStaffUrl = `https://65375e4bbb226bb85dd320ac.mockapi.io/declareASchema/${staff.id}`
     const currDate = new Date();
 
     const formik = useFormik({
@@ -46,7 +46,7 @@ export default function UpdateStaff() {
 
         onSubmit: (values) => {
             values.createdAt = new Date(values.createdAt);
-            axios.post(putStaffUrl, values)
+            axios.put(putStaffUrl, values)
                 .then(
                     response => {
                         return response.data;
