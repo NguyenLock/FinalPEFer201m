@@ -66,7 +66,70 @@ export default function UpdateStaff() {
     return (
         <div>
             <h1 className="font-pages">Update Staff</h1>
-            
+            <form onSubmit={formik.handleSubmit}>
+                <Stack spacing={2}>
+                    <TextField
+                        label="Name"
+                        name="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange} />
+                    {formik.errors && (<Typography variant="caption" color="red">{formik.errors.name}</Typography>)}
+                    <TextField 
+                    label="address"
+                    name="address"
+                    value={formik.values.address}
+                    onChange={formik.handleChange}/>
+                    {formik.errors && (<Typography variant="caption" color="red">{formik.errors.address}</Typography>)}
+                    <TextField
+                    label="age"
+                    name="age"
+                    value={formik.values.age}
+                    onChange={formik.handleChange}/>
+                    {formik.errors && (<Typography variant="caption" color="red">{formik.errors.age}</Typography>)}
+                    <TextField
+                    label="avatar"
+                    name="avatar"
+                    value={formik.values.avatar}
+                    onChange={formik.handleChange}/>
+                    {formik.errors && (<Typography variant="caption" color="red">{formik.errors.avatar}</Typography>)}
+                    <TextField
+                    label="createdAt"
+                    name="createdAt"
+                    disabled
+                    value={formik.values.createdAt}
+                    onChange={formik.handleChange}/>
+                </Stack>
+                
+                <Button variant="contained" size="small"
+                type="submit">
+                    Save
+                </Button>
+            </form>
+
+            <Dialog
+                open={Open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Congraturation"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        <Alert severity="success">
+                            <AlertTitle>Adding successful!</AlertTitle>
+                        </Alert>
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button><Link to='/dashboard' style={{ textDecoration: "none" }}>Dashboard</Link></Button>
+                    <Button autoFocus onClick={handleClose}>
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
 
         </div>
 
