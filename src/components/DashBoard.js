@@ -74,7 +74,7 @@ export default function Dashboard() {
 
     <div>
       <h1 className="font-pages">Dashboard</h1>
-
+      
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

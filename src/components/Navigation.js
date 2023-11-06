@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Dashboard', 'Contact'];
+const navItems = ['Home', 'Dashboard'];
 
 export default function NavigationBar(props) {
 
