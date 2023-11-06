@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-
+import '../scss/Detail.scss';
 
 
 
@@ -25,9 +25,10 @@ export default function Detail() {
   },[getStaffsUrl])
 
   return (
-    <div>
-      <h1>Detail</h1>
-      <Grid container rowSpacing={2}>
+    <div className='Detail'>
+      <div className='content'>
+        <h1 className='detail-title'>Staff</h1>
+        <Grid className='full-box'>
         <Grid className='parent' item xs={12}>
           <Card className='child'sx={{maxWidth: 545}}>
             <CardMedia sx={{height: 440}}
@@ -35,7 +36,7 @@ export default function Detail() {
             image={APIData.avatar}
             title="green iguana"
             />
-            <CardContent>
+            <CardContent className='text'>
               <Typography gutterBottom variant='h5' component="div">
                Name: {APIData.name}
               </Typography>
@@ -57,6 +58,8 @@ export default function Detail() {
           </Card>
         </Grid>
       </Grid>
+      </div>
+      
     </div>
     
   )

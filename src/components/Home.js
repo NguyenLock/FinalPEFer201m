@@ -8,7 +8,8 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-import '../App.css'
+import '../scss/Home.scss';
+
 
 function Home() {
   const [APIData, setAPIData] = useState([])
@@ -27,47 +28,36 @@ function Home() {
 
 
   return (
-    <div className='content' style={{marginLeft: '68px'}}>
-      <>
-        <h1 className='font-page'>Home</h1>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {APIData.map((staff) => (
-
-            <Card style={{padding: '30px'}} sx={{ maxWidth: 400}}>
-              <CardMedia
-                component="img"
-                height="260"
-                image={staff.avatar}
-              />
-              <div className='card-content'>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    <Link style={{textDecoration: 'none', color: 'red'}} to={`detail/${staff.id}`}>
-                      Name: <a> {staff.name}</a>
-                    </Link>
-                  </Typography>
-
-                  <Typography gutterBottom variant="h5" component="div">
-                    Address {staff.address}
-                  </Typography>
-
-                  <Typography gutterBottom variant="h5" component="div">
-                    Age: {staff.age}
-                  </Typography>
-
-                </CardContent>
-              </div>
-              <CardActions style={{display: 'contents'}}>
-                <Link to={`detail/${staff.id}`}>
-                <Button size="small">Detail</Button>
+    <div className="Home">
+    <div className="content" style={{ padding: '100px 0' }}>
+      <h1 className='title-home'>Home</h1>
+      <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+        {APIData.map((data) => (
+          <Grid item xs={2} sm={4} md={4} key={data.id}>
+            <Card sx={{ maxWidth: 345 }} style={{ marginBottom: 20 }}>
+              <CardMedia sx={{ height: 140 }} image={data.avatar} title={data.name} />
+              <CardContent className='text'>
+                <Typography gutterBottom variant="h5" component="div">
+                  {data.name}
+                </Typography>
+                <Typography gutterBottom variant="h6" component="div">
+                  {data.age} years old
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {data.address}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Link to={`/detail/${data.id}`}>
+                  <Button size="small">Detail</Button>
                 </Link>
               </CardActions>
             </Card>
-          ))};
-        </Grid>
-      </>
-
+          </Grid>
+        ))}
+      </Grid>
     </div>
+  </div>
 
 
 

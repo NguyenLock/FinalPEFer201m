@@ -7,6 +7,7 @@ import DashBoard from "./components/DashBoard";
 import Detail from "./components/Detail";
 import AddStaff from "./components/AddStaff";
 import UpdateStaff from "./components/UpdateStaff";
+import LoginForm from "./components/Login";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<LoginForm/>}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path ="/detail/:id" element={<Detail />}></Route>
         <Route  path='/addNewStaff' element={<AddStaff/> }></Route>

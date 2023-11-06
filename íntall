@@ -1,0 +1,8 @@
+npm install @mui/material @emotion/react @emotion/styled
+npx create-react-app my-react-app
+npm i yup
+npm install formik --save
+npm install @mui/icons-material
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+npm install react-router-dom
+npm install axios
