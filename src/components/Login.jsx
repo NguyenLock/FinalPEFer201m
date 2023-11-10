@@ -13,12 +13,6 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
-
-
 export default function Login() {
     const [user,setUser] = useState(localStorage.getItem('user'))
     if(user){
@@ -77,7 +71,7 @@ export default function Login() {
             }}
         >
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <LockOutlinedIcon />
+                
             </Avatar>
             <Typography component="h1" variant="h5">
                 Sign in
@@ -111,6 +105,14 @@ export default function Login() {
                     sx={{ mt: 3, mb: 2 }}
                 >
                     Sign In
+                </Button>
+                <Button 
+                type='forget'
+                fullWidth
+                variant='contained'
+                sx={{mt :3, mb: 2}}
+                >
+                    Forget PassWord
                 </Button>
 
             </Box>

@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import '../scss/UpdateStaff.scss'
 
 export default function UpdateStaff() {
     const staff = useParams();
@@ -74,37 +75,38 @@ export default function UpdateStaff() {
                         value={formik.values.name}
                         onChange={formik.handleChange} />
                     {formik.errors && (<Typography variant="caption" color="red">{formik.errors.name}</Typography>)}
-                    <TextField 
-                    label="address"
-                    name="address"
-                    value={formik.values.address}
-                    onChange={formik.handleChange}/>
+                    <TextField
+                        label="address"
+                        name="address"
+                        value={formik.values.address}
+                        onChange={formik.handleChange} />
                     {formik.errors && (<Typography variant="caption" color="red">{formik.errors.address}</Typography>)}
                     <TextField
-                    label="age"
-                    name="age"
-                    value={formik.values.age}
-                    onChange={formik.handleChange}/>
+                        label="age"
+                        name="age"
+                        value={formik.values.age}
+                        onChange={formik.handleChange} />
                     {formik.errors && (<Typography variant="caption" color="red">{formik.errors.age}</Typography>)}
                     <TextField
-                    label="avatar"
-                    name="avatar"
-                    value={formik.values.avatar}
-                    onChange={formik.handleChange}/>
+                        label="avatar"
+                        name="avatar"
+                        value={formik.values.avatar}
+                        onChange={formik.handleChange} />
                     {formik.errors && (<Typography variant="caption" color="red">{formik.errors.avatar}</Typography>)}
                     <TextField
-                    label="createdAt"
-                    name="createdAt"
-                    disabled
-                    value={formik.values.createdAt}
-                    onChange={formik.handleChange}/>
+                        label="createdAt"
+                        name="createdAt"
+                        disabled
+                        value={formik.values.createdAt}
+                        onChange={formik.handleChange} />
                 </Stack>
-                
-                <Button variant="contained" size="small"
-                type="submit">
+
+                <Button style={{alignItems: 'center', marginTop: '15px'}} className="Button-save" variant="contained" size="small"
+                    type="submit">
                     Save
                 </Button>
             </form>
+            
 
             <Dialog
                 open={Open}
