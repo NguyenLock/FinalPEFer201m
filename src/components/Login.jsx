@@ -38,7 +38,7 @@ export default function Login() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const passwordData = data.get('password');
-        const  URL = `https://65321e684d4c2e3f333da188.mockapi.io/api/v1/staffs?email=${data.get('email')}`;
+        const  URL = `https://65375e4bbb226bb85dd320ac.mockapi.io/declareASchema?email=${data.get('email')}`;
         axios.get(URL).then(
             response => {
                 return response.data;

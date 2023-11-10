@@ -20,6 +20,15 @@ import '../scss/UpdateStaff.scss'
 
 export default function UpdateStaff() {
     const staff = useParams();
+    const[isHover, setHovered] = useState(false);
+
+        const handleMouseEnter = () => {
+            setHovered(true);
+          };
+        
+          const handleMouseLeave = () => {
+            setHovered(false);
+          };        
 
     const [Open, setOpen] = useState(false)
 
@@ -101,7 +110,10 @@ export default function UpdateStaff() {
                         onChange={formik.handleChange} />
                 </Stack>
 
-                <Button style={{alignItems: 'center', marginTop: '15px'}} className="Button-save" variant="contained" size="small"
+                <Button className="Button-save" variant="contained" size="small" 
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{backgroundColor: isHover ? 'green' : 'blue', marginTop: '20px'}}
                     type="submit">
                     Save
                 </Button>
