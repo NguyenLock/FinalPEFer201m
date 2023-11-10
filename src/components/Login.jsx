@@ -12,8 +12,18 @@ import axios from 'axios';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import '../scss/Login.scss';
 export default function Login() {
+        const[isHover, setHovered] = useState(false);
+
+        const handleMouseEnter = () => {
+            setHovered(true);
+          };
+        
+          const handleMouseLeave = () => {
+            setHovered(false);
+          };        
+    
     const [user,setUser] = useState(localStorage.getItem('user'))
     if(user){
         
@@ -70,7 +80,7 @@ export default function Login() {
                 alignItems: 'center',
             }}
         >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'red', marginTop: '50px' }}>
                 
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -99,6 +109,10 @@ export default function Login() {
                 />
 
                 <Button
+                    color='primary'
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{backgroundColor: isHover ? 'blue' : 'green'}}
                     type="submit"
                     fullWidth
                     variant="contained"
@@ -106,17 +120,24 @@ export default function Login() {
                 >
                     Sign In
                 </Button>
+                <div className='button'>
                 <Button 
                 type='forget'
-                fullWidth
+               
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{backgroundColor: isHover ? 'blue' : 'green'}}
                 variant='contained'
                 sx={{mt :3, mb: 2}}
                 >
                     Forget PassWord
                 </Button>
+                </div>
+               
 
             </Box>
         </Box>
+        
 
     </Container>)}
         </>
